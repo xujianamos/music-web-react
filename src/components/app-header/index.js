@@ -1,3 +1,11 @@
+/*
+ * @Author: xujian
+ * @Date: 2021-09-12 15:25:38
+ * @LastEditors: xujian
+ * @LastEditTime: 2021-09-24 22:41:00
+ * @Description:
+ * @FilePath: /music-web-react/src/components/app-header/index.js
+ */
 import React, { memo } from "react";
 import { HeaderWrapper, HeaderLeft, HeaderRight } from "./style";
 import { headerLinks } from "@/common/local-data";
@@ -47,7 +55,7 @@ export default memo(function HYAppHeader() {
           <div>登录</div>
         </HeaderRight>
       </div>
-      <div className="divider">s</div>
+      <div className="divider"></div>
     </HeaderWrapper>
   );
 });

@@ -1,3 +1,11 @@
+/*
+ * @Author: xujian
+ * @Date: 2021-09-12 15:52:58
+ * @LastEditors: xujian
+ * @LastEditTime: 2021-09-24 22:41:47
+ * @Description:
+ * @FilePath: /music-web-react/src/components/app-header/style.js
+ */
 import styled from "styled-components";
 export const HeaderWrapper = styled.div`
   height: 75px;
@@ -73,7 +81,7 @@ export const HeaderRight = styled.div`
   align-items: center;
   color: #ccc;
   font-size: 12px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   .search {
     width: 158px;
     height: 32px;
