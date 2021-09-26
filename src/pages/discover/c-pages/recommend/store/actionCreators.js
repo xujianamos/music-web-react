@@ -2,9 +2,9 @@
  * @Author: xujian
  * @Date: 2021-09-24 23:17:13
  * @LastEditors: xujian
- * @LastEditTime: 2021-09-25 23:55:43
+ * @LastEditTime: 2021-09-26 21:09:04
  * @Description:
- * @FilePath: /music-web-react/src/pages/discover/c-pages/recommend/store/actionCreators.js
+ * @FilePath: \music-web-react\src\pages\discover\c-pages\recommend\store\actionCreators.js
  */
 import * as actionType from "./constants";
 import { getTopBanners, getHotRecommends } from "@/services/recommend";
@@ -33,16 +33,16 @@ export const getTopBannerAction = () => {
   };
 };
 /**
- * @description:
+ * @description:修改推荐数据
  * @param {*}
  * @return {*}
  */
 const changeHotRecommendAction = (res) => ({
   type: actionType.CHANGE_HOT_RECOMMEND,
-  hotRecommends: res.hotRecommends,
+  hotRecommends: res.result,
 });
 /**
- * @description:
+ * @description:发起网络请求获取推荐数据
  * @param {*}
  * @return {*}
  */
