@@ -2,7 +2,7 @@
  * @Author: xujian
  * @Date: 2021-09-24 21:31:06
  * @LastEditors: xujian
- * @LastEditTime: 2021-09-25 23:45:10
+ * @LastEditTime: 2021-10-01 23:49:40
  * @Description:推荐页面
  * @FilePath: /music-web-react/src/pages/discover/c-pages/recommend/index.js
  */
@@ -19,6 +19,9 @@ import TopBaner from "./c-cpns/top-baner/index";
 import HYHotRecommend from "./c-cpns/hot-recommend";
 import HYRecommendRanking from "./c-cpns/recommend-ranking";
 import HYNewAlbum from "./c-cpns/new-album";
+import HYUserLogin from "./c-cpns/user-login";
+import HYSettleSinger from "./c-cpns/settle-singer";
+import HYHotAnchor from "./c-cpns/hot-anchor";
 // 优化版本
 function HYRecommend(props) {
   return (
@@ -31,7 +34,12 @@ function HYRecommend(props) {
           <HYNewAlbum></HYNewAlbum>
           <HYRecommendRanking></HYRecommendRanking>
         </RecommendLeft>
-        <RecommendRight></RecommendRight>
+        {/* 右侧组件 */}
+        <RecommendRight>
+          <HYUserLogin />
+          <HYSettleSinger />
+          <HYHotAnchor />
+        </RecommendRight>
       </Content>
     </RecommendWraper>
   );

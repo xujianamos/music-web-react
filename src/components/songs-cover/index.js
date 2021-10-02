@@ -2,9 +2,9 @@
  * @Author: xujian
  * @Date: 2021-09-26 21:25:15
  * @LastEditors: xujian
- * @LastEditTime: 2021-09-26 21:44:44
+ * @LastEditTime: 2021-10-02 16:54:29
  * @Description:
- * @FilePath: \music-web-react\src\components\songs-cover\index.js
+ * @FilePath: /music-web-react/src/components/songs-cover/index.js
  */
 import React, { memo } from "react";
 import { SongsCoverWrapper } from "./style";
@@ -27,7 +27,7 @@ export default memo(function HYSongsCover(props) {
       </div>
       <div className="cover-bottom text-nowrap">{info.name}</div>
       <div className="cover-source text-nowrap">
-        by {info.copywriter || info.creator.nickname}
+        by {info.copywriter || (info.creator && info.creator.nickname)}
       </div>
     </SongsCoverWrapper>
   );

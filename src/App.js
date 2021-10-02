@@ -2,7 +2,7 @@
  * @Author: xujian
  * @Date: 2021-09-11 23:27:33
  * @LastEditors: xujian
- * @LastEditTime: 2021-09-24 23:13:08
+ * @LastEditTime: 2021-10-02 17:02:06
  * @Description:程序入口
  * @FilePath: /music-web-react/src/App.js
  */
@@ -15,6 +15,7 @@ import store from "@/store";
 // 组件相关
 import HYAppHeader from "@/components/app-header";
 import HYAppFooter from "@/components/app-footer";
+import HYAppPlayerBar from "@/pages/player/app-player-bar";
 
 export default memo(function App() {
   return (
@@ -26,6 +27,8 @@ export default memo(function App() {
         {renderRoutes(routes)}
         {/* 底部组件 */}
         <HYAppFooter />
+        {/* 播放工具栏 */}
+        <HYAppPlayerBar />
       </HashRouter>
     </Provider>
   );
