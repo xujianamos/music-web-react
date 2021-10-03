@@ -2,7 +2,7 @@
  * @Author: xujian
  * @Date: 2021-10-02 21:38:32
  * @LastEditors: xujian
- * @LastEditTime: 2021-10-02 21:39:46
+ * @LastEditTime: 2021-10-03 22:40:21
  * @Description:
  * @FilePath: /music-web-react/src/services/player.js
  */
@@ -18,6 +18,20 @@ export function getSongDetail(ids) {
     url: "/song/detail",
     params: {
       ids,
+    },
+  });
+}
+
+/**
+ * @description: 获取歌词
+ * @param {*}
+ * @return {*}
+ */
+export function getLyric(id) {
+  return request({
+    url: "/lyric",
+    params: {
+      id,
     },
   });
 }
