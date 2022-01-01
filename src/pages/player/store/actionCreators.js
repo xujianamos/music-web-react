@@ -2,7 +2,7 @@
  * @Author: xujian
  * @Date: 2021-10-02 21:33:00
  * @LastEditors: xujian
- * @LastEditTime: 2021-10-03 22:59:40
+ * @LastEditTime: 2021-10-10 00:09:36
  * @Description:
  * @FilePath: /music-web-react/src/pages/player/store/actionCreators.js
  */
@@ -103,6 +103,11 @@ export const changeCurrentSong = (tag) => {
 const changLyricListAction = (lyricList) => ({
   type: actionType.CHANGE_LYRIC_LIST,
   lyricList,
+});
+
+export const changeCurrentLyricIndex = (index) => ({
+  type: actionType.CHANGE_CURRENT_LYRIC_INDEX,
+  index,
 });
 
 export const getLyricAction = (id) => {

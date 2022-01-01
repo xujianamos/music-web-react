@@ -2,7 +2,7 @@
  * @Author: xujian
  * @Date: 2021-10-02 17:00:12
  * @LastEditors: xujian
- * @LastEditTime: 2021-10-03 22:25:47
+ * @LastEditTime: 2021-10-07 15:02:55
  * @Description:
  * @FilePath: /music-web-react/src/pages/player/app-player-bar/index.js
  */
@@ -17,6 +17,7 @@ import {
   getSongDetailAction,
   changeSequenceAction,
   changeCurrentSong,
+  changeCurrentLyricIndex,
 } from "../store/actionCreators";
 
 import { getSizeImage, formatDate, getPlaySong } from "@/utils/data-format";
@@ -29,11 +30,12 @@ export default memo(function HYAppPlayerBar() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef();
   // redux hook
-  const { currentSong, sequence, playList } = useSelector(
+  const { currentSong, sequence, playList, lyricList } = useSelector(
     (state) => ({
       currentSong: state.getIn(["player", "currentSong"]),
       sequence: state.getIn(["player", "sequence"]),
       playList: state.getIn(["player", "playList"]),
+      lyricList: state.getIn(["player", "lyricList"]),
     }),
     shallowEqual
   );
@@ -69,11 +71,26 @@ export default memo(function HYAppPlayerBar() {
   }, [isPlaying]);
 
   const timeUpdate = (e) => {
+    const currentTime = e.target.currentTime;
     if (!isChange) {
       setCurrentTime(e.target.currentTime * 1000);
 
-      setProgress((currentTime / duration) * 100);
+      setProgress(((currentTime * 1000) / duration) * 100);
     }
+
+    // 获取当前的歌词
+    // let currentLyricIndex = 0;
+    let i = 0;
+    for (; i < lyricList.length; i++) {
+      const lyricItem = lyricList[i];
+      if (currentTime * 1000 < lyricItem.time) {
+        // currentLyricIndex = i;
+        break;
+      }
+    }
+    console.log(lyricList[i - 1]);
+    if(current)
+    // dispatch(changeCurrentLyricIndex(i-1))
   };
 
   const sliderChange = useCallback(
